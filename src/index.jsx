@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 
-import PostIndex from './containers/posts_index';
+import PostsIndex from './containers/posts_index';
 
 import postsReducer from './reducers/posts_reducer';
 
@@ -15,6 +15,7 @@ import '../assets/stylesheets/application.scss';
 
 const reducers = combineReducers({
   posts: postsReducer
+  // posts: (state = [], action) => state
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
