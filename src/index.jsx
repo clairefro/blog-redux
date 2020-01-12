@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 
 import PostsIndex from './containers/posts_index';
-import PostShow from './containers/post_show';
+import PostsShow from './containers/posts_show';
 
 import postsReducer from './reducers/posts_reducer';
 
@@ -28,6 +28,7 @@ ReactDOM.render(
     <div className="thin-container">
       <Switch>
         <Route path="/" exact component={PostsIndex} />
+        <Route path="/posts/:id" exact component={PostsShow} />
       </Switch>
     </div>
     </Router>
