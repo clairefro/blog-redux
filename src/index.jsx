@@ -6,17 +6,19 @@ import reduxPromise from 'redux-promise';
 import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
+import { reducer as formReducer } from 'redux-form';
 
 import PostsIndex from './containers/posts_index';
 import PostsShow from './containers/posts_show';
+import PostsNew from './containers/posts_new';
 
 import postsReducer from './reducers/posts_reducer';
 
 import '../assets/stylesheets/application.scss';
 
 const reducers = combineReducers({
-  posts: postsReducer
-  // posts: (state = [], action) => state
+  posts: postsReducer,
+  form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
@@ -28,6 +30,7 @@ ReactDOM.render(
     <div className="thin-container">
       <Switch>
         <Route path="/" exact component={PostsIndex} />
+        <Route path="/posts/new" exact component={PostsNew} />
         <Route path="/posts/:id" exact component={PostsShow} />
       </Switch>
     </div>

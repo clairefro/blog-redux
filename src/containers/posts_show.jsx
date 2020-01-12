@@ -7,7 +7,6 @@ import { fetchPost } from '../actions';
 
 class PostsShow extends Component {
   componentWillMount() {
-    console.log('entered component will mount');
     if (!this.props.post) {
       // fetch individual post if posts not already fetched from posts_index
       this.props.fetchPost(this.props.match.params.id);
