@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 
 import PostsIndex from './containers/posts_index';
+import PostShow from './containers/post_show';
 
 import postsReducer from './reducers/posts_reducer';
 
